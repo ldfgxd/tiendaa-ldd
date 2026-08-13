@@ -1416,14 +1416,21 @@ input:checked + .slider:before {
         margin-top: 10px;
         box-shadow: 0 10px 20px rgba(0,0,0,0.5);
     }
-.tarjeta-producto {
-        width: 46%;
-        max-width: 100%;
+.contenedor-productos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 8px;
+    }
+
+    .tarjeta-producto {
+        width: 44%;
+        max-width: none;
         margin-bottom: 10px;
     }
 
     .tarjeta-producto img {
-        height: 120px;
+        height: 110px;
         width: 100%;
         object-fit: contain;
         background-color: transparent;
