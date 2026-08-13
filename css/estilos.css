@@ -13,11 +13,10 @@ body {
     background-image: url('../img/fondo.jpg'); /* Tu imagen original */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     background-repeat: no-repeat;
+    min-height: 100vh; /* Reemplaza el fixed por esto */
     color: #ffffff;
 }
-
 /* Menú de Navegación Fijo */
 .menu-principal {
     background-color: #111111;
@@ -145,7 +144,7 @@ overflow: hidden;
     }
 
     .tarjeta-producto {
-        max-width: 100%;
+        max-width: 30%;
     }
 }
 .tarjeta-producto {
@@ -1417,7 +1416,18 @@ input:checked + .slider:before {
         margin-top: 10px;
         box-shadow: 0 10px 20px rgba(0,0,0,0.5);
     }
+.tarjeta-producto {
+        width: 46%;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
 
+    .tarjeta-producto img {
+        height: 120px;
+        width: 100%;
+        object-fit: contain;
+        background-color: transparent;
+    }
     /* Clase que se activa con el toque para desplegar el menú */
     .menu-links.activo {
         display: flex !important;
