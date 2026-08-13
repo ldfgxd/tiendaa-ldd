@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD Supply | Tienda Online</title>
+    <!-- Conectamos nuestra hoja de estilos que está en la carpeta css -->
+    <link rel="stylesheet" href="css/estilos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">  
+</head>
+<body>
+
+    <!-- Menú de Navegación -->
+    <header class="menu-principal">
+        <div class="logo">JD Supply</div>
+        
+        <!-- Botón de las 3 rayitas -->
+        <button class="menu-toggle" id="menuToggle">☰</button>
+
+        <!-- El nav envuelve todos los enlaces -->
+        <nav class="menu-links" id="menuLinks">
+            <a href="index.html">Inicio</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#perfumes-seccion">Perfumes y accesorios</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#" id="btn-carrito" onclick="abrirCarrito(event)" style="text-decoration: none; color: white; font-weight: bold;">
+                🛒 Carrito (<span id="contador-carrito">0</span>)
+            </a>
+        </nav>
+
+        <button onclick="alternarModoOscuro()" id="btn-modo" style="background: none; border: none; font-size: 18px; cursor: pointer;">🌙</button>
+    </header>
+    <!-- Sección de Bienvenida (Hero) -->
+    <section id="inicio" class="hero">
+        <h1>Bienvenido a JD Supply</h1>
+        <p>Lo mejor de prendas exclusivas a un click.</p>
+        <a href="#catalogo" class="btn-principal">Ver Catálogo</a>
+    </section>
+
+   <!-- Sección de Catálogo con Filtros -->
+    <section id="catalogo" class="seccion-catalogo">
+        <h2>Nuestro Catálogo</h2>
+<div style="text-align: right; margin: 15px 0;">
+    <span style="color: #ffffff; font-weight: bold; margin-right: 10px; text-shadow: 0 0 5px #ff0033, 0 0 15px #0055ff, 0 0 25px #0055ff;">Modo LDFG</span>
+    <label class="switch" style="vertical-align: middle;">
+        <input type="checkbox" id="interruptor-ld" onclick="alternarModoLD()">
+        <span class="slider round"></span>
+    </label>
+</div>
+</div> 
+
+        <!-- Botones de Filtro -->
+<div class="botones-filtro">
+    <button class="btn-filtro activo" onclick="filtrarProductos('todos')">Todos</button>
+    <button class="btn-filtro" onclick="filtrarProductos('diseño')">Diseño</button>
+    <button class="btn-filtro" onclick="filtrarProductos('basicas')">Básicas</button>
+    <button class="btn-filtro" onclick="filtrarProductos('essentials')">Essentials</button>
+</div>
+
+     <!-- Botones de Filtro por Talla -->
+<div class="contenedor-tallas" style="text-align: center;">
+  <p style="font-size: 15px; color: #ffffff; font-weight: bold; margin-bottom: 8px; text-shadow: 0 0 5px #ffffff, 0 0 15px #ff0000, 0 0 30px #ff0000;">Talla:</p>
+    <div style="display: flex; justify-content: center; gap: 10px;">
+        <button class="btn-talla" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #ccc; background: white; font-weight: bold; cursor: pointer;" onclick="filtrarTalla('S')">S</button>
+        <button class="btn-talla" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #ccc; background: white; font-weight: bold; cursor: pointer;" onclick="filtrarTalla('M')">M</button>
+        <button class="btn-talla" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #ccc; background: white; font-weight: bold; cursor: pointer;" onclick="filtrarTalla('L')">L</button>
+        <button class="btn-talla" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #ccc; background: white; font-weight: bold; cursor: pointer;" onclick="filtrarTalla('XL')">XL</button>
+    </div>
+</div>   
+     <div class="contenedor-productos">
+        <div class="tarjeta-producto" data-categoria="diseño" data-talla="S">
+    <img src="img/dl1.jpg" alt="Producto DL 1">
+    <h3>Casablanca</h3>
+        <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="S">
+    <img src="img/dl2.jpg" alt="Producto DL 2">
+    <h3>Amiri</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="S">
+    <img src="img/dl3.jpg" alt="Producto DL 3">
+    <h3>Etro</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="S">
+    <img src="img/dl4.jpg" alt="Producto DL 4">
+    <h3>Gucci</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="S">
+    <img src="img/dl5.jpg" alt="Producto DL 5">
+    <h3>Moncler</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="essentials" data-talla="S">
+    <img src="img/dl6.jpg" alt="Producto DL 6">
+    <h3>Nba Essentials</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="S">
+    <img src="img/dl7.jpg" alt="Producto DL 7">
+    <h3>Loewe</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="S">
+    <img src="img/dl8.jpg" alt="Producto DL 8">
+    <h3>Loewe</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="M">
+    <img src="img/Fg1.jpg" alt="Producto Fg 1">
+    <h3>amiri</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="M">
+    <img src="img/Fg2.jpg" alt="Producto Fg 2">
+    <h3>amiri</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="M">
+    <img src="img/Fg3.jpg" alt="Producto Fg 3">
+    <h3>balenciaga</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="M">
+    <img src="img/Fg4.jpg" alt="Producto Fg 4">
+    <h3>casablanca</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="M">
+    <img src="img/Fg5.jpg" alt="Producto Fg 5">
+    <h3>etro</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="M">
+    <img src="img/Fg6.jpg" alt="Producto Fg 6">
+    <h3>gucci</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="M">
+    <img src="img/Fg7.jpg" alt="Producto Fg 7">
+    <h3>louis vuitton</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+            <div class="tarjeta-producto" data-categoria="basicas" data-talla="L">
+    <img src="img/ld1.jpg" alt="Camiseta LD 1">
+    <h3>ami paris</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="L">
+    <img src="img/ld2.jpg" alt="Camiseta LD 2">
+    <h3>ami paris</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="L">
+    <img src="img/ld3.jpg" alt="Camiseta LD 3">
+    <h3>amiri</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="L">
+    <img src="img/ld4.jpg" alt="Camiseta LD 4">
+    <h3>amiri</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="L">
+    <img src="img/ld5.jpg" alt="Camiseta LD 5">
+    <h3>amiri</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="L">
+    <img src="img/ld6.jpg" alt="Camiseta LD 6">
+    <h3>balenciaga</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="L">
+    <img src="img/ld7.jpg" alt="Camiseta LD 7">
+    <h3>casablanca</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="L">
+    <img src="img/ld8.jpg" alt="Camiseta LD 8">
+    <h3>amiri</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="essentials" data-talla="L">
+    <img src="img/ld9.jpg" alt="Camiseta LD 9">
+    <h3>nba essentials</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="L">
+    <img src="img/ld10.jpg" alt="Camiseta LD 10">
+    <h3>etro</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="L">
+    <img src="img/ld11.jpg" alt="Camiseta LD 11">
+    <h3>golden goose</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="L">
+    <img src="img/ld12.jpg" alt="Camiseta LD 12">
+    <h3>gucci</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="L">
+    <img src="img/ld13.jpg" alt="Camiseta LD 13">
+    <h3>hermes</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="L">
+    <img src="img/ld14.jpg" alt="Camiseta LD 14">
+    <h3>kenzo</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="L">
+    <img src="img/ld15.jpg" alt="Camiseta LD 15">
+    <h3>louis vuitton</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="L">
+    <img src="img/ld16.jpg" alt="Camiseta LD 16">
+    <h3>louis vuitton</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="L">
+    <img src="img/ld17.jpg" alt="Camiseta LD 17">
+    <h3>louis vuitton</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="L">
+    <img src="img/ld18.jpg" alt="Camiseta LD 18">
+    <h3>moncler</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basica" data-talla="L">
+    <img src="img/ld19.jpg" alt="Camiseta LD 19">
+    <h3>moncler</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="L">
+    <img src="img/ld20.jpg" alt="Camiseta LD 20">
+    <h3>off-white</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="L">
+    <img src="img/ld21.jpg" alt="Camiseta LD 21">
+    <h3>off-white</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="L">
+    <img src="img/ld22.jpg" alt="Camiseta LD 22">
+    <h3>polo bear</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="XL">
+    <img src="img/xl1.jpg" alt="Producto XL 1">
+    <h3>amiri</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="XL">
+    <img src="img/xl2.jpg" alt="Producto XL 2">
+    <h3>amiri</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="XL">
+    <img src="img/xl3.jpg" alt="Producto XL 3">
+    <h3>amiri</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="XL">
+    <img src="img/xl4.jpg" alt="Producto XL 4">
+    <h3>miu miu</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="XL">
+    <img src="img/xl5.jpg" alt="Producto XL 5">
+    <h3>burberry</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="XL">
+    <img src="img/xl6.jpg" alt="Producto XL 6">
+    <h3>diesel</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="essentials" data-talla="XL">
+    <img src="img/xl7.jpg" alt="Producto XL 7">
+    <h3>fear of god essentials</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="XL">
+    <img src="img/xl8.jpg" alt="Producto XL 8">
+    <h3>palm angels</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="basicas" data-talla="XL">
+    <img src="img/xl9.jpg" alt="Producto XL 9">
+    <h3>golden goose</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="XL">
+    <img src="img/xl10.jpg" alt="Producto XL 10">
+    <h3>off-white</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
+    </section>
+   <!-- SECCION CON BORDE AZUL Y FONDO GRIS -->
+<section id="perfumes-seccion" style="margin-top: 50px; padding: 20px; background-color: #1a1a1a;">
+    
+    <h2 style="text-align: center; font-size: 28px; margin-bottom: 30px; color: #fff; text-transform: uppercase;">Perfumes y Accesorios</h2>
+    
+    <div style="display: flex; gap: 30px; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+
+        <!-- TARJETA PERFUMES -->
+        <div style="width: 220px; text-align: center; background: #333333; padding: 15px; border-radius: 10px; border: 2px solid #00d2ff; box-shadow: 0 0 10px rgba(0, 210, 255, 0.4);">
+            <img src="img/perfume1.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+            <p style="color: #fff; font-weight: bold; margin: 10px 0 5px 0;">PERFUMES</p>
+            <p style="font-size: 12px; color: #a0d8ef; margin-bottom: 10px;">Proximamente...</p>
+            <button style="background: #007bff; color: #fff; border: none; padding: 8px; width: 100%; border-radius: 4px; cursor: pointer;">No disponible</button>
+        </div>
+
+        <!-- TARJETA ACCESORIOS -->
+        <div style="width: 220px; text-align: center; background: #333333; padding: 15px; border-radius: 10px; border: 2px solid #00d2ff; box-shadow: 0 0 10px rgba(0, 210, 255, 0.4);">
+            <img src="img/accesorio1.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 5px;">
+            <p style="color: #fff; font-weight: bold; margin: 10px 0 5px 0;">ACCESORIOS</p>
+            <p style="font-size: 12px; color: #a0d8ef; margin-bottom: 10px;">Proximamente...</p>
+            <button style="background: #007bff; color: #fff; border: none; padding: 8px; width: 100%; border-radius: 4px; cursor: pointer;">No disponible</button>
+        </div>
+
+    </div>
+</section>
+<script>
+    
+    function comprarPorWhatsAppCarrito() {
+    let mensaje = "Hola, quiero comprar los siguientes productos de mi carrito:\n";
+    carrito.forEach(prod => {
+        mensaje += `- ${prod.titulo} (${prod.precio})\n`;
+    });
+    // Cambia los X por tu número de teléfono real
+    let telefono = "521XXXXXXXXXX"; 
+    window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`, '_blank');
+}
+
+function comprarPorInstagramCarrito() {
+    // Cambia 'tu_usuario_de_instagram' por tu nombre de usuario real
+    window.open("https://instagram.com/direct/t/tu_usuario_de_instagram", '_blank');
+}
+    function abrirCarrito(event) {
+    event.preventDefault();
+    const contenedorLista = document.getElementById('lista-carrito');
+    contenedorLista.innerHTML = ''; 
+
+    if (carrito.length === 0) {
+        contenedorLista.innerHTML = '<p style="text-align: center; color: #777; margin-top: 20px;">Tu carrito está vacío</p>';
+    } else {
+        let total = 0;
+        
+        carrito.forEach((prod, index) => {
+            // Limpiamos el texto del precio para poder sumarlo
+            let precioNum = parseFloat(prod.precio.replace('$', '').replace(' MXN', '').trim());
+            total += precioNum;
+
+            contenedorLista.innerHTML += `
+                <div style="display: flex; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                    <img src="${prod.img}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 5px; margin-right: 10px;">
+                    <div style="flex: 1;">
+                        <h4 style="margin: 0; font-size: 14px;">${prod.titulo}</h4>
+                        <p style="margin: 5px 0 0; color: #e91e63; font-weight: bold;">${prod.precio}</p>
+                    </div>
+                    <button onclick="eliminarDelCarrito(${index})" style="background: none; border: none; color: red; cursor: pointer; font-size: 16px;">🗑️</button>
+                </div>
+            `;
+        });
+
+        // Agregamos el total calculado al final de la lista del carrito
+        contenedorLista.innerHTML += `
+            <div style="margin-top: 20px; border-top: 2px solid #333; padding-top: 10px; display: flex; justify-content: space-between; font-weight: bold; font-size: 16px;">
+                <span>Total:</span>
+                <span style="color: #e91e63;">$${total.toFixed(2)} MXN</span>
+            </div>
+        `;
+    }
+
+    document.getElementById('modal-carrito').style.display = 'flex';
+}
+
+function cerrarCarrito() {
+    document.getElementById('modal-carrito').style.display = 'none';
+}
+
+function cerrarCarritoFuera(event) {
+    if (event.target.id === 'modal-carrito') {
+        cerrarCarrito();
+    }
+}
+
+function eliminarDelCarrito(index) {
+    carrito.splice(index, 1);
+    document.getElementById('contador-carrito').innerText = carrito.length;
+    abrirCarrito(new Event('click')); // Recarga la lista abierta
+}
+    function agregarAlCarrito() {
+    const titulo = document.getElementById('modal-titulo').innerText;
+    const precio = document.getElementById('modal-precio').innerText;
+    const img = document.getElementById('modal-img').src;
+
+    // Metemos el producto al arreglo del carrito
+    carrito.push({ titulo, precio, img });
+
+    // Actualizamos el número que aparece en la barra de arriba
+    document.getElementById('contador-carrito').innerText = carrito.length;
+
+    // Cerramos el modal y damos un aviso rápido
+    cerrarModal();
+  let mensaje = document.getElementById("mensaje-alerta");
+    mensaje.style.display = "block";
+    
+    setTimeout(() => {
+        mensaje.style.display = "none";
+    }, 2000);  
+}
+    let carrito = [];
+    function filtrarProductos(categoria) {
+    const tarjetas = document.querySelectorAll('.tarjeta-producto');
+    const botones = document.querySelectorAll('.btn-filtro');
+
+    tarjetas.forEach(tarjeta => {
+        const categoriaTarjeta = tarjeta.getAttribute('data-categoria');
+
+        // Quitamos la animación momentáneamente para reiniciarla
+        tarjeta.style.animation = 'none';
+        tarjeta.offsetHeight; // Truco de JS para reiniciar la animación
+
+        if (categoria === 'todos' || categoriaTarjeta === categoria) {
+            tarjeta.style.display = 'block';
+            tarjeta.style.animation = 'aparecerSuave 0.4s ease forwards'; // Aplica la animación de entrada
+        } else {
+            tarjeta.style.display = 'none';
+        }
+    });
+
+    // Cambiar la clase 'activo' del botón seleccionado
+    botones.forEach(boton => {
+        boton.classList.remove('activo');
+        if (boton.getAttribute('onclick').includes(categoria)) {
+            boton.classList.add('activo');
+        }
+    });
+}
+
+function toggleDeportivas() {
+        const extras = document.querySelectorAll('.extra-deportiva');
+        const estOculto = extras[0].style.display === 'none' || extras[0].style.display === '';
+        
+        extras.forEach(tarjeta => {
+            tarjeta.style.display = estOculto ? 'block' : 'none';
+        });
+    }
+ function mostrarMasPerfumes() {
+        const columnaAccesorios = document.getElementById('columna-accesorios');
+        const extras = document.querySelectorAll('.extra-perfume');
+        
+        // Verificamos si los accesorios están ocultos (significa que ya estamos "adentro" de perfumes)
+        const estaAbierto = columnaAccesorios.style.display === 'none';
+
+        if (estaAbierto) {
+            // SI YA ESTÁ ABIERTO: Volvemos a mostrar los accesorios y ocultamos el extra
+            columnaAccesorios.style.display = 'block';
+            extras.forEach(tarjeta => {
+                tarjeta.style.display = 'none';
+            });
+        } else {
+            // SI ESTÁ CERRADO: Ocultamos los accesorios y mostramos el perfume extra
+            columnaAccesorios.style.display = 'none';
+            extras.forEach(tarjeta => {
+                tarjeta.style.display = 'block';
+            });
+        }
+    }
+
+    function mostrarMasAccesorios() {
+        const columnaPerfumes = document.getElementById('columna-perfumes');
+        const extras = document.querySelectorAll('.extra-accesorio');
+        
+        // Verificamos si los perfumes están ocultos (estamos "adentro" de accesorios)
+        const estaAbierto = columnaPerfumes.style.display === 'none';
+
+        if (estaAbierto) {
+            // SI YA ESTÁ ABIERTO: Volvemos a mostrar los perfumes y ocultamos el extra
+            columnaPerfumes.style.display = 'block';
+            extras.forEach(tarjeta => {
+                tarjeta.style.display = 'none';
+            });
+        } else {
+            // SI ESTÁ CERRADO: Ocultamos los perfumes y mostramos el accesorio extra
+            columnaPerfumes.style.display = 'none';
+            extras.forEach(tarjeta => {
+                tarjeta.style.display = 'block';
+            });
+        }
+    }
+ document.querySelectorAll('.tarjeta-producto').forEach(tarjeta => {
+    tarjeta.addEventListener('click', (e) => {
+        // 1. Si es la tarjeta de portada (la que tiene el evento 'onclick' de filtrar), no hacemos nada
+        if (tarjeta.getAttribute('onclick')) return;
+
+        // 2. Si le pican al botón "Comprar", tampoco abrimos el modal aquí (o evitamos doble acción)
+        if (e.target.tagName === 'BUTTON') return;
+
+        const img = tarjeta.querySelector('img').src;
+        const titulo = tarjeta.querySelector('h3').innerText;
+        const precio = tarjeta.querySelector('.precio').innerText;
+
+        document.getElementById('modal-img').src = img;
+        document.getElementById('modal-titulo').innerText = titulo;
+        document.getElementById('modal-precio').innerText = precio;
+
+        document.getElementById('modal-producto').style.display = 'flex';
+    });
+});
+function cerrarModal() {
+    document.getElementById('modal-producto').style.display = 'none';
+}
+
+function cerrarModalFuera(event) {
+    if (event.target.id === 'modal-producto') {
+        cerrarModal();
+    }
+}
+function alternarModoOscuro() {
+    let body = document.body;
+    let btnModo = document.getElementById('btn-modo');
+    let seccionPerfumes = document.getElementById('perfumes-seccion'); // Asegúrate de que este sea el ID de tu sección
+    
+    if (body.classList.contains('modo-oscuro')) {
+        body.classList.remove('modo-oscuro');
+        body.style.backgroundColor = '';
+        body.style.color = '';
+        if (seccionPerfumes) seccionPerfumes.style.backgroundColor = ''; // Regresa a su color normal
+        btnModo.innerText = '🌙';
+    } else {
+        body.classList.add('modo-oscuro');
+        body.style.backgroundColor = '#121212';
+        body.style.color = '#f0f0f0';
+        if (seccionPerfumes) seccionPerfumes.style.backgroundColor = '#1e1e1e'; // Fondo oscuro para la sección
+        btnModo.innerText = '☀️';
+    }
+}
+</script>
+<div id="modal-producto" onclick="cerrarModalFuera(event)" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); justify-content: center; align-items: center;">
+    <div style="background: white; padding: 30px; border-radius: 10px; max-width: 400px; width: 90%; text-align: center; position: relative;">
+        <span onclick="cerrarModal()" style="position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; font-weight: bold;">&times;</span>
+        <img id="modal-img" src="" alt="Producto" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 5px; margin-bottom: 15px;">
+        <h3 id="modal-titulo" style="margin-bottom: 10px; color: #333;"></h3>
+        <p id="modal-precio" style="font-size: 20px; color: #e91e63; font-weight: bold; margin-bottom: 20px;"></p>
+      <button onclick="agregarAlCarrito()" class="btn-comprar" style="width: 100%; padding: 12px; background: #333; color: white; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 8px;">Agregar al carrito</button>
+<a href="https://wa.me/521XXXXXXXXXX?text=Hola,%20me%20interesa%20este%20producto." target="_blank" style="display: block; width: 100%; box-sizing: border-box; padding: 12px; background: #25d366; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold;">Comprar por WhatsApp 📱</a>
+<a href="https://instagram.com/direct/t/tu_usuario_de_instagram" target="_blank" style="display: block; width: 100%; box-sizing: border-box; margin-top: 8px; padding: 12px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold;">Comprar por Instagram 📸</a>
+    </div>
+</div> 
+<!-- Panel del Carrito -->
+<div id="modal-carrito" onclick="cerrarCarritoFuera(event)" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: flex-end;">
+    <div style="background: white; width: 350px; height: 100%; padding: 20px; box-shadow: -2px 0 5px rgba(0,0,0,0.2); display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eee; padding-bottom: 10px;">
+            <h2>Tu Carrito</h2>
+            <span onclick="cerrarCarrito()" style="font-size: 24px; cursor: pointer; font-weight: bold;">&times;</span>
+        </div>
+        <div id="lista-carrito" style="flex: 1; overflow-y: auto; margin-top: 15px;">
+            <!-- Aquí se pintarán los productos -->
+        </div>
+     <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 15px;">
+    <button onclick="comprarPorWhatsAppCarrito()" style="padding: 12px; background-color: #25d366; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Comprar por WhatsApp 📱</button>
+    <button onclick="comprarPorInstagramCarrito()" style="padding: 12px; background-color: #e1306c; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Comprar por Instagram 📸</button>
+    <button onclick="carrito = []; document.getElementById('lista-carrito').innerHTML = ''; document.getElementById('contador-carrito').innerText = '0';" style="width: 100%; padding: 12px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Vaciar Carrito 🗑️</button>
+</div>   
+    </div>
+</div> 
+<section id="contacto" class="seccion-contacto">
+    <div class="caja-mayorista">
+        <div class="sticker-oferta">🚀 ¡Exclusivo Mayoristas!</div>
+
+        <h2>📈 ¡IMPULSA TU NEGOCIO HOY!</h2>
+        <p>Accede a precios de mayoreo exclusivos, obtén los mejores productos y lleva tus ventas al siguiente nivel. ¡Cotiza directo con nosotros ahora mismo!</p>
+        
+  <div class="grupo-botones-contacto">
+    <a href="https://wa.me/521XXXXXXXXXX?text=Hola,%20quiero%20información%20para%20empezar%20mi%20negocio%20y%20cotizar%20paquetes." target="_blank" class="btn-contacto btn-whatsapp">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448z"/></svg>
+        Mandanos Mensaje...
+    </a>
+    
+    <div class="grupo-instagram-dual">
+        <a href="https://instagram.com/usuario1" target="_blank" class="btn-contacto btn-instagram">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            jc_glezzz
+        </a>
+        <a href="https://instagram.com/usuario2" target="_blank" class="btn-contacto btn-instagram">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            die_rdz17 
+        </a>
+    </div>
+</div>  
+</section>
+
+</script>
+<section class="seccion-ubicacion">
+    <h2 style="text-align: center;">¿Dónde estamos?</h2>
+    <div class="tarjeta-ubicacion">
+        <div class="info-texto">
+            <p>📍 <strong>Tienda Física</strong></p>
+            <p>San Buenaventura, Chihuahua</p>
+            <a href="https://maps.google.com/?cid=1575224363079513565" target="_blank" class="boton-mapa">Abrir en Google Maps</a>
+        </div>
+        <div class="contenedor-mapa">
+            <!-- Aquí pegas el iframe que te da Google Maps -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14197.834015797374!2d-106.9195328!3d29.8456208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e66e74b97a22a7%3A0xdb658519e48f7d98!2sSan%20Buenaventura%2C%20Chih.!5e0!3m2!1ses-419!2smx!4v1723145400000!5m2!1ses-419!2smx" 
+            width="100%" height="250" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+<footer class="footer-tiendald">
+    <p>&copy; 2026 tiendaLD. Todos los derechos reservados.</p>
+    <p>San Buenaventura, Chihuahua</p>
+</footer>
+<div id="mensaje-alerta">¡Producto agregado al carrito! ✅</div>
+<!-- Modal de Compra / Opciones -->
+<div id="modal-producto" class="modal-overlay" style="display: none;">
+    <div class="modal-contenido">
+        <span id="cerrar-modal" class="modal-cerrar">&times;</span>
+     <img id="modal-img" src="" alt="Producto" style="width: 100% !important; height: auto !important; object-fit: contain !important; max-height: 400px;">
+        <h3 id="modal-titulo"></h3>
+        <p id="modal-precio"></p>
+        
+        <button class="btn-modal-opcion btn-carrito">Agregar al carrito</button>
+        <a id="btn-whatsapp" href="#" target="_blank" class="btn-modal-opcion btn-wsp">Comprar por WhatsApp 📱</a>
+        <a id="btn-instagram" href="#" target="_blank" class="btn-modal-opcion btn-ig">Comprar por Instagram 📷</a>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById('modal-producto');
+        const cerrarModal = document.getElementById('cerrar-modal');
+
+        // Seleccionamos las imágenes y los botones de comprar
+        const elementosClickeables = document.querySelectorAll('#catalogo .tarjeta-producto img, #catalogo .tarjeta-producto .btn-comprar');
+ 
+        elementosClickeables.forEach(elemento => {
+            elemento.addEventListener('click', (e) => {
+                const tarjeta = e.target.closest('.tarjeta-producto');
+                if (!tarjeta) return;
+                
+                const imgSrc = tarjeta.querySelector('img').src;
+                const titulo = tarjeta.querySelector('h3').textContent;
+                const precio = tarjeta.querySelector('.precio').textContent;
+
+                // Rellenar el modal
+                document.getElementById('modal-img').src = imgSrc;
+                document.getElementById('modal-titulo').textContent = titulo;
+                document.getElementById('modal-precio').textContent = precio;
+
+                // Mostrar el modal
+                modal.style.display = 'flex';
+            });
+        });
+
+        // Cerrar el modal
+        if (cerrarModal) {
+            cerrarModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+    function filtrarTalla(tallaSeleccionada) {
+    const tarjetas = document.querySelectorAll('.tarjeta-producto');
+    
+    tarjetas.forEach(tarjeta => {
+        const tallaProducto = tarjeta.getAttribute('data-talla');
+        
+        if (tallaSeleccionada === 'todos' || tallaProducto === tallaSeleccionada) {
+            tarjeta.style.display = 'block';
+        } else {
+            tarjeta.style.display = 'none';
+        }
+    });
+}
+</script>
+<script>
+function alternarModoLD() {
+    document.body.classList.toggle('modo-ld');
+}
+</script>
+<script>
+    const toggleBtn = document.getElementById('menuToggle');
+    const menuLinks = document.getElementById('menuLinks');
+
+    toggleBtn.addEventListener('click', () => {
+        menuLinks.classList.toggle('activo');
+    });
+</script>
+</body>
+</html>
