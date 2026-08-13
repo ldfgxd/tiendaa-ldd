@@ -1429,7 +1429,6 @@ input:checked + .slider:before {
         margin-bottom: 10px;
     }
 
-    
     .tarjeta-producto img {
         height: 110px;
         width: 100%;
