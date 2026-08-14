@@ -773,14 +773,16 @@ body.modo-ld .hero {
 
 
 
-/* 4. Sección de Contacto */
+/* Sección Contacto: Aplicando lógica de repetición vertical para evitar desbordes */
 body.modo-ld #contacto,
 body.modo-ld .seccion-contacto {
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../img/Contactomodo1.jpg') !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-}/* ==========================================
+    position: relative;
+    background-image: url('../img/Contactomodo1.jpg') !important;
+    background-size: 100% auto !important;
+    background-repeat: repeat-y !important;
+    background-position: top center !important;
+}
+/* ==========================================
    FONDO DE CATÁLOGO DEFINITIVO
    ========================================== */
 
