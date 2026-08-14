@@ -79,12 +79,6 @@
     <button class="btn-comprar">Comprar</button>
 </div>
 <div class="tarjeta-producto" data-categoria="diseño" data-talla="S">
-    <img src="img/dl2.jpg" alt="Producto DL 2">
-    <h3>Amiri</h3>
-    <p class="precio"></p>
-    <button class="btn-comprar">Comprar</button>
-</div>
-<div class="tarjeta-producto" data-categoria="diseño" data-talla="S">
     <img src="img/dl3.jpg" alt="Producto DL 3">
     <h3>Etro</h3>
     <p class="precio"></p>
@@ -120,15 +114,30 @@
     <p class="precio"></p>
     <button class="btn-comprar">Comprar</button>
 </div>
-<div class="tarjeta-producto" data-categoria="diseño" data-talla="M">
-    <img src="img/Fg1.jpg" alt="Producto Fg 1">
-    <h3>amiri</h3>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="L">
+    <div class="contenedor-imagen" onclick="cambiarImagen(this)">
+        <!-- Esta es la imagen que se verá al principio -->
+        <img src="img/fg1.jpg" 
+             data-frente="img/fg1.jpg" 
+             data-atras="img/ami1.jpg" 
+             class="imagen-interactiva" 
+             alt="AMI">
+        <span class="badge-click">🔄 Clic para ver reverso</span>
+    </div>
+    <h3>ami</h3>
     <p class="precio"></p>
     <button class="btn-comprar">Comprar</button>
 </div>
-<div class="tarjeta-producto" data-categoria="diseño" data-talla="M">
-    <img src="img/Fg2.jpg" alt="Producto Fg 2">
-    <h3>amiri</h3>
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="L">
+    <div class="contenedor-imagen" onclick="cambiarImagen(this)">
+        <img src="img/fg2.jpg" 
+             data-frente="img/fg2.jpg" 
+             data-atras="img/ri1.jpg" 
+             class="imagen-interactiva" 
+             alt="RI">
+        <span class="badge-click">🔄 Clic para ver reverso</span>
+    </div>
+    <h3>ri</h3>
     <p class="precio"></p>
     <button class="btn-comprar">Comprar</button>
 </div>
@@ -204,12 +213,6 @@
     <p class="precio"></p>
     <button class="btn-comprar">Comprar</button>
 </div>
-<div class="tarjeta-producto" data-categoria="basicas" data-talla="L">
-    <img src="img/ld8.jpg" alt="Camiseta LD 8">
-    <h3>amiri</h3>
-    <p class="precio"></p>
-    <button class="btn-comprar">Comprar</button>
-</div>
 <div class="tarjeta-producto" data-categoria="essentials" data-talla="L">
     <img src="img/ld9.jpg" alt="Camiseta LD 9">
     <h3>nba essentials</h3>
@@ -242,7 +245,7 @@
 </div>
 <div class="tarjeta-producto" data-categoria="basicas" data-talla="L">
     <img src="img/ld14.jpg" alt="Camiseta LD 14">
-    <h3>kenzo</h3>
+    <h3>loro piana</h3>
     <p class="precio"></p>
     <button class="btn-comprar">Comprar</button>
 </div>
@@ -277,13 +280,14 @@
     <button class="btn-comprar">Comprar</button>
 </div>
 <div class="tarjeta-producto" data-categoria="diseño" data-talla="L">
-    <img src="img/ld20.jpg" alt="Camiseta LD 20">
-    <h3>off-white</h3>
-    <p class="precio"></p>
-    <button class="btn-comprar">Comprar</button>
-</div>
-<div class="tarjeta-producto" data-categoria="diseño" data-talla="L">
-    <img src="img/ld21.jpg" alt="Camiseta LD 21">
+    <div class="contenedor-imagen" onclick="cambiarImagen(this)">
+        <img src="img/ld21.jpg" 
+             data-frente="img/ld21.jpg" 
+             data-atras="img/ld20.jpg" 
+             class="imagen-interactiva" 
+             alt="OFF-WHITE">
+        <span class="badge-click">🔄 Clic para ver reverso</span>
+    </div>
     <h3>off-white</h3>
     <p class="precio"></p>
     <button class="btn-comprar">Comprar</button>
@@ -336,9 +340,9 @@
     <p class="precio"></p>
     <button class="btn-comprar">Comprar</button>
 </div>
-<div class="tarjeta-producto" data-categoria="basicas" data-talla="XL">
+<div class="tarjeta-producto" data-categoria="essentials" data-talla="XL">
     <img src="img/xl8.jpg" alt="Producto XL 8">
-    <h3>palm angels</h3>
+    <h3>essentials</h3>
     <p class="precio"></p>
     <button class="btn-comprar">Comprar</button>
 </div>
@@ -348,14 +352,22 @@
     <p class="precio"></p>
     <button class="btn-comprar">Comprar</button>
 </div>
-<div class="tarjeta-producto" data-categoria="diseño" data-talla="XL">
-    <img src="img/xl10.jpg" alt="Producto XL 10">
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="L">
+    <div class="contenedor-imagen" onclick="cambiarImagen(this)">
+        <!-- Esta es la imagen que se verá al principio (xl10.jpg) -->
+        <img src="img/xl10.jpg" 
+             data-frente="img/xl10.jpg" 
+             data-atras="img/Off1.jpg" 
+             class="imagen-interactiva" 
+             alt="OFF-WHITE">
+        <span class="badge-click">🔄 Clic para ver reverso</span>
+    </div>
     <h3>off-white</h3>
     <p class="precio"></p>
     <button class="btn-comprar">Comprar</button>
 </div>
 <!-- Tarjeta 1 -->
-    <div class="tarjeta-producto" data-categoria="diseno" data-talla="M">
+    <div class="tarjeta-producto" data-categoria="diseño" data-talla="M">
         <img src="img/play1.jpg" alt="Producto M 1">
         <h3>Balenciaga</h3>
         <p class="precio"></p>
@@ -363,7 +375,7 @@
     </div>
 
     <!-- Tarjeta 2 -->
-    <div class="tarjeta-producto" data-categoria="diseno" data-talla="M">
+    <div class="tarjeta-producto" data-categoria="basicas" data-talla="M">
         <img src="img/play2.jpg" alt="Producto M 2">
         <h3>boss</h3>
         <p class="precio"></p>
@@ -371,7 +383,7 @@
     </div>
 
     <!-- Tarjeta 3 -->
-    <div class="tarjeta-producto" data-categoria="diseno" data-talla="M">
+    <div class="tarjeta-producto" data-categoria="basicas" data-talla="M">
         <img src="img/play3.jpg" alt="Producto M 3">
         <h3>gucci</h3>
         <p class="precio"></p>
@@ -379,7 +391,7 @@
     </div>
 
     <!-- Tarjeta 4 -->
-    <div class="tarjeta-producto" data-categoria="diseno" data-talla="M">
+    <div class="tarjeta-producto" data-categoria="basicas" data-talla="M">
         <img src="img/play4.jpg" alt="Producto M 4">
         <h3>casablanca</h3>
         <p class="precio"></p>
@@ -387,7 +399,7 @@
     </div>
 
     <!-- Tarjeta 5 -->
-    <div class="tarjeta-producto" data-categoria="diseno" data-talla="M">
+    <div class="tarjeta-producto" data-categoria="diseño" data-talla="M">
         <img src="img/play5.jpg" alt="Producto M 5">
         <h3>gucci</h3>
         <p class="precio"></p>
@@ -395,14 +407,14 @@
     </div>
 
     <!-- Tarjeta 6 -->
-    <div class="tarjeta-producto" data-categoria="diseno" data-talla="M">
+    <div class="tarjeta-producto" data-categoria="diseño" data-talla="M">
         <img src="img/play6.jpg" alt="Producto M 6">
         <h3>burberry</h3>
         <p class="precio"></p>
         <button class="btn-comprar">Comprar</button>
     </div>
     <!-- Tarjeta S 1 con etiqueta de medida -->
-    <div class="tarjeta-producto" data-categoria="diseno" data-talla="s" style="position: relative;">
+    <div class="tarjeta-producto" data-categoria="" data-talla="s" style="position: relative;">
         <span style="position: absolute; top: 10px; right: 10px; background: #00d2ff; color: #000; font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 6px; z-index: 2; box-shadow: 0 0 8px rgba(0,210,255,0.6);">9 us</span>
         <img src="img/xbo1.jpg" alt="Producto S 1">
         <h3>golden goose</h3>
@@ -410,7 +422,7 @@
         <button class="btn-comprar">Comprar</button>
     </div>
     <!-- Tarjeta S 2 con etiqueta de medida -->
-    <div class="tarjeta-producto" data-categoria="diseno" data-talla="s" style="position: relative;">
+    <div class="tarjeta-producto" data-categoria="" data-talla="s" style="position: relative;">
         <span style="position: absolute; top: 10px; right: 10px; background: #00d2ff; color: #000; font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 6px; z-index: 2; box-shadow: 0 0 8px rgba(0,210,255,0.6);">9.5 us</span>
         <img src="img/xbo2.jpg" alt="Producto S 2">
         <h3>LV</h3>
@@ -419,7 +431,7 @@
     </div>
 
     <!-- Tarjeta S 3 con etiqueta de medida -->
-    <div class="tarjeta-producto" data-categoria="diseno" data-talla="s" style="position: relative;">
+    <div class="tarjeta-producto" data-categoria="" data-talla="s" style="position: relative;">
         <span style="position: absolute; top: 10px; right: 10px; background: #00d2ff; color: #000; font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 6px; z-index: 2; box-shadow: 0 0 8px rgba(0,210,255,0.6);">10 us</span>
         <img src="img/xbo3.jpg" alt="Producto S 3">
         <h3>balenciaga</h3>
@@ -427,7 +439,7 @@
         <button class="btn-comprar">Comprar</button>
     </div>
     <!-- Tarjeta S 4 -->
-    <div class="tarjeta-producto" data-categoria="diseno" data-talla="S">
+    <div class="tarjeta-producto" data-categoria="basicas" data-talla="S">
         <img src="img/xbo4.jpg" alt="Producto S 4">
         <h3>casablanca</h3>
         <p class="precio"></p>
@@ -435,7 +447,7 @@
     </div>
 
     <!-- Tarjeta S 5 -->
-    <div class="tarjeta-producto" data-categoria="diseno" data-talla="S">
+    <div class="tarjeta-producto" data-categoria="basicas" data-talla="S">
         <img src="img/xbo5.jpg" alt="Producto S 5">
         <h3>assc</h3>
         <p class="precio"></p>
@@ -443,43 +455,48 @@
     </div>
 
     <!-- Tarjeta S 6 -->
-    <div class="tarjeta-producto" data-categoria="diseno" data-talla="M">
+    <div class="tarjeta-producto" data-categoria="basicas" data-talla="M">
         <img src="img/xbo6.jpg" alt="Producto S 6">
         <h3>casablanca</h3>
         <p class="precio"></p>
         <button class="btn-comprar">Comprar</button>
     </div>
 
-    <!-- Tarjeta S 7 -->
-    <div class="tarjeta-producto" data-categoria="diseno" data-talla="S">
-        <img src="img/xbo7.jpg" alt="Producto S 7">
-        <h3>amiri</h3>
-        <p class="precio"></p>
-        <button class="btn-comprar">Comprar</button>
+   <div class="tarjeta-producto" data-categoria="diseño" data-talla="S">
+    <div class="contenedor-imagen" onclick="cambiarImagen(this)">
+        <img src="img/xbo7.jpg" 
+             data-frente="img/xbo7.jpg" 
+             data-atras="img/xbo8.jpg" 
+             class="imagen-interactiva" 
+             alt="AMIRI">
+        <span class="badge-click">🔄 Clic para ver reverso</span>
     </div>
-
-    <!-- Tarjeta S 8 -->
-    <div class="tarjeta-producto" data-categoria="diseno" data-talla="S">
-        <img src="img/xbo8.jpg" alt="Producto S 8">
-        <h3>amiri</h3>
-        <p class="precio"></p>
-        <button class="btn-comprar">Comprar</button>
-    </div>
-
+    <h3>amiri</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
     <!-- Tarjeta S 9 -->
-    <div class="tarjeta-producto" data-categoria="diseno" data-talla="S">
+    <div class="tarjeta-producto" data-categoria="diseño" data-talla="S">
         <img src="img/xbo9.jpg" alt="Producto S 9">
         <h3>gucci</h3>
         <p class="precio"></p>
         <button class="btn-comprar">Comprar</button>
     </div>
-    <!-- Última tarjeta sin medida -->
-    <div class="tarjeta-producto" data-categoria="diseno" data-talla="s">
-        <img src="img/balen1.jpg" alt="Producto Balenciaga">
-        <h3>balenciaga</h3>
-        <p class="precio"></p>
-        <button class="btn-comprar">Comprar</button>
+    <!-- Nueva tarjeta para Balenciaga con balen1.jpg al frente -->
+<div class="tarjeta-producto" data-categoria="diseño" data-talla="L">
+    <div class="contenedor-imagen" onclick="cambiarImagen(this)">
+        <!-- Imagen inicial (Frente) ahora es balen1.jpg -->
+        <img src="img/balen1.jpg" 
+             data-frente="img/balen1.jpg" 
+             data-atras="img/balen2.jpg" 
+             class="imagen-interactiva" 
+             alt="BALENCIAGA">
+        <span class="badge-click">🔄 Clic para ver reverso</span>
     </div>
+    <h3>balenciaga</h3>
+    <p class="precio"></p>
+    <button class="btn-comprar">Comprar</button>
+</div>
     </section>
    <!-- SECCION CON BORDE AZUL Y FONDO GRIS -->
 <section id="perfumes-seccion" style="margin-top: 50px; padding: 20px; position: relative; overflow: hidden;">
@@ -892,6 +909,20 @@ window.addEventListener('click', function(event) {
         cerrarModalAccesorios();
     }
 });
+function cambiarImagen(contenedor) {
+    const img = contenedor.querySelector('.imagen-interactiva');
+    const frente = img.getAttribute('data-frente');
+    const atras = img.getAttribute('data-atras');
+    const badge = contenedor.querySelector('.badge-click');
+
+    if (img.src.endsWith(frente)) {
+        img.src = atras;
+        badge.textContent = "🔄 Ver frente";
+    } else {
+        img.src = frente;
+        badge.textContent = "🔄 Clic para ver reverso";
+    }
+}
 </script>
 <!-- MODAL DE ACCESORIOS ADAPTABLE A MÓVIL -->
 <div id="modalAccesorios" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); overflow-y: auto; padding: 10px 0;">

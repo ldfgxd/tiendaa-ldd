@@ -1549,3 +1549,34 @@ body.modo-ld #catalogo {
     background-repeat: repeat-y !important;
     background-position: top center !important;
 }
+/* Estilos para el contenedor de la imagen interactiva */
+.contenedor-imagen {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px; /* Para que la imagen tenga bordes redondeados */
+    margin-bottom: 10px;
+}
+
+.imagen-interactiva {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+/* Pequeño aviso visual para que el usuario sepa que puede hacer clic */
+.badge-click {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 20px;
+    pointer-events: none; /* Para que el clic pase a través de él */
+    opacity: 0.9;
+    z-index: 2; /* Asegura que esté encima de la imagen */
+}
