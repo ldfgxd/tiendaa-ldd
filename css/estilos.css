@@ -1599,3 +1599,41 @@ body.modo-ld #catalogo {
     pointer-events: none;
     z-index: 10;
 }
+.footer-tiendald {
+    background-color: #0b0b0b;
+    color: #888888;
+    padding: 2.5rem 1rem;
+    text-align: center;
+    border-top: 1px solid #222222;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+}
+
+.footer-content-ld p {
+    margin: 0.4rem 0;
+}
+
+.footer-brand {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.6rem !important;
+    letter-spacing: 0.5px;
+}
+
+.footer-location {
+    font-size: 0.8rem;
+    color: #606060;
+}
+.footer-firma {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.logo-cruz-azul {
+    height: 18px;
+    width: auto;
+    vertical-align: middle;
+}
