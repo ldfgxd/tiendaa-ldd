@@ -113,7 +113,7 @@ overflow: hidden;
 /* Sección de Catálogo */
 .seccion-catalogo {
     max-width: 1200px;
-    margin: 4rem auto;
+    margin: -1rem auto;
     padding: 0 1.5rem;
     #catalogo, .seccion-catalogo {
     position: relative;
@@ -710,7 +710,7 @@ img {
 #contacto {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-        url('../img/contactofondo.jpg') !important;
+        url('../img/Contactomodo1.jpg') !important;
         
     background-size: cover !important;
     background-position: center !important;
@@ -901,14 +901,14 @@ input:checked + .slider:before {
     transform: translateX(22px); 
 }
 .modal-contenido {
-    max-width: 400px;
+    max-width: 300px;
     height: auto;
 }
 
 #modal-img {
     width: 100% !important;
     height: auto !important;
-    max-height: 350px !important;
+    max-height: 220px !important;
     object-fit: contain !important;
     display: block;
     margin: 0 auto;
