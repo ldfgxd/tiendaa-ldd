@@ -1528,38 +1528,22 @@ header.menu-principal .header-container {
     align-items: center !important;
     width: 100% !important;
 }
-/* --- MODO LDFG: FONDOS OPTIMIZADOS --- */
+/* --- MODO LDFG: FONDOS LIMPIOS Y NÍTIDOS --- */
 
-body.modo-ld #inicio,
-body.modo-ld #catalogo {
+/* Sección Inicio (se mantiene intacta y nítida) */
+body.modo-ld #inicio {
     position: relative;
-    background: none !important;
-}
-
-/* Inicio se queda con absolute porque es una sección corta */
-body.modo-ld #inicio::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background-image: url('../img/iniciomodo1.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
-    z-index: -1;
+    background-repeat: no-repeat !important;
 }
 
-/* Catálogo usa fixed para que la imagen cubra la pantalla sin estirarse kilométricamente */
-body.modo-ld #catalogo::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+/* Sección Catálogo: Textura repetida verticalmente para cero blur y cero desbordes */
+body.modo-ld #catalogo {
+    position: relative;
     background-image: url('../img/catalogomodo1.jpg') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    z-index: -1;
+    background-size: 100% auto !important;
+    background-repeat: repeat-y !important;
+    background-position: top center !important;
 }
