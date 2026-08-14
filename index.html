@@ -13,24 +13,27 @@
    <div class="bg-fijo"></div> 
     <!-- Menú de Navegación -->
     <header class="menu-principal">
+    <div class="header-container">
         <div class="logo">JD Supply</div>
         
-        <!-- Botón de las 3 rayitas -->
-        <button class="menu-toggle" id="menuToggle">☰</button>
-
-        <!-- El nav envuelve todos los enlaces -->
-        <nav class="menu-links" id="menuLinks">
-            <a href="index.html">Inicio</a>
-            <a href="#catalogo">Catálogo</a>
-            <a href="#perfumes-seccion">Perfumes y accesorios</a>
-            <a href="#contacto">Contacto</a>
-            <a href="#" id="btn-carrito" onclick="abrirCarrito(event)" style="text-decoration: none; color: white; font-weight: bold;">
-                🛒 Carrito (<span id="contador-carrito">0</span>)
-            </a>
-        </nav>
-
-        <button onclick="alternarModoOscuro()" id="btn-modo" style="background: none; border: none; font-size: 18px; cursor: pointer;">🌙</button>
-    </header>
+        <div class="header-controls">
+            <!-- Botón del menú -->
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <!-- Botón modo oscuro -->
+            <button onclick="alternarModoOscuro()" id="btn-modo" style="background: none; border: none; font-size: 18px; cursor: pointer;">🌙</button>
+           <a href="#" id="btn-carrito" onclick="abrirCarrito(event)" style="text-decoration: none; color: white; font-size: 18px; margin-left: 5px;">🛒<span id="contador-carrito" style="font-size: 12px; vertical-align: top;">0</span></a>
+        </div>
+    </div>
+    
+    <!-- Tus links (esto se despliega al presionar el menú) -->
+    <nav class="menu-links" id="menuLinks">
+        <a href="index.html">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#perfumes-seccion">Perfumes y accesorios</a>
+        <a href="#contacto">Contacto</a>
+        
+    </nav>
+</header>
     <!-- Sección de Bienvenida (Hero) -->
     <section id="inicio" class="hero">
         <h1>Bienvenido a JD Supply</h1>
