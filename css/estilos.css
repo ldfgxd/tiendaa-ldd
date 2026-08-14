@@ -19,11 +19,10 @@ body {
     padding: 0;
     color: #ffffff;
 }
-/* Menú de Navegación Fijo */
 .menu-principal {
     background-color: #111111;
     color: #ffffff;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -36,6 +35,12 @@ body {
     box-sizing: border-box;
 }
 
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
@@ -1501,4 +1506,24 @@ input:checked + .slider:before {
     font-size: 1.2rem;
     cursor: pointer;
     padding: 4px;
+}
+header.menu-principal {
+    height: 70px !important;
+    padding: 0 2rem !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    z-index: 1000 !important;
+}
+
+header.menu-principal .header-container {
+    height: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
 }
