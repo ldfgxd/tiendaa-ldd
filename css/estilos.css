@@ -692,15 +692,7 @@ img {
 }
 #perfumes-seccion {
     /* Fondo con la imagen y capa oscura para que se lea el texto */
-    background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-        url('../img/perfufondo.jpg');
-        
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    
+   position: relative;
     /* Aseguramos que el texto sea blanco */
     color: #ffffff !important;
 }
