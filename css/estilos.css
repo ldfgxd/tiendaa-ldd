@@ -1533,7 +1533,7 @@ header.menu-principal .header-container {
    ============================================================ */
 
 /* 1. Cuando el body tiene la clase .modo-ld, ocultamos el div de fondo fijo general */
-body.modo-ld .bg-fijo {
+body.modo-ld .bg-fijo { 
     display: none !important;
 }
 
@@ -1575,17 +1575,4 @@ body.modo-ld #catalogo h2,
 body.modo-ld #catalogo .filtros {
     position: relative;
     z-index: 5 !important;
-}
-/* Ajuste especial para móviles */
-@media (max-width: 768px) {
-    body.modo-ld #inicio,
-    body.modo-ld #catalogo {
-        /* background-attachment: fixed a veces da problemas en iOS (iPhones).
-           'scroll' o 'local' es más estable, pero 'fixed' es lo que logra el efecto. */
-        background-attachment: fixed !important; 
-        
-        /* Esto evita que la imagen se estire o se vea rara al girar el cel */
-        background-size: cover !important; 
-        background-position: center center !important;
-    }
 }
