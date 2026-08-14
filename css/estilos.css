@@ -1528,51 +1528,38 @@ header.menu-principal .header-container {
     align-items: center !important;
     width: 100% !important;
 }
-/* ============================================================
-   SOLUCIÓN CORREGIDA: IMÁGENES ESPECÍFICAS POR SECCIÓN (MODO LD)
-   ============================================================ */
+/* --- MODO LDFG: FONDOS OPTIMIZADOS --- */
 
-/* 1. Cuando el body tiene la clase .modo-ld, ocultamos el div de fondo fijo general */
-body.modo-ld .bg-fijo { 
-    display: none !important;
+body.modo-ld #inicio,
+body.modo-ld #catalogo {
+    position: relative;
+    background: none !important;
 }
 
-/* 2. CONFIGURACIÓN PARA LA SECCIÓN DE INICIO (Hero)
-   Forzamos que use 'iniciomodo1.jpg' cubriendo todo */
-body.modo-ld #inicio,
-body.modo-ld .hero {
-    /* Eliminamos cualquier fondo anterior */
-    background: none !important; 
-    
-    /* Aplicamos 'iniciomodo1.jpg' */
+/* Inicio se queda con absolute porque es una sección corta */
+body.modo-ld #inicio::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('../img/iniciomodo1.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important; /* Imagen fija al hacer scroll */
-    
-    /* Aseguramos que el texto sea legible (color claro) */
-    color: white !important; 
+    z-index: -1;
 }
 
-/* 3. CONFIGURACIÓN PARA LA SECCIÓN DE CATÁLOGO
-   Forzamos que use 'Catalogomodo1.jpg' cubriendo todo */
-body.modo-ld #catalogo {
-    /* Eliminamos cualquier fondo anterior */
-    background: none !important;
-    
-    /* Aplicamos 'Catalogomodo1.jpg' */
-    background-image: url('../img/Catalogomodo1.jpg') !important;
+/* Catálogo usa fixed para que la imagen cubra la pantalla sin estirarse kilométricamente */
+body.modo-ld #catalogo::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/catalogomodo1.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
-}
-
-/* 4. Aseguramos que los productos y textos queden por encima de las imágenes */
-body.modo-ld #catalogo .contenedor-productos,
-body.modo-ld #catalogo h2,
-body.modo-ld #catalogo .filtros {
-    position: relative;
-    z-index: 5 !important;
+    z-index: -1;
 }
