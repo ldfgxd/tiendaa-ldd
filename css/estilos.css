@@ -1580,3 +1580,22 @@ body.modo-ld #catalogo {
     opacity: 0.9;
     z-index: 2; /* Asegura que esté encima de la imagen */
 }
+/* 1. La tarjeta debe tener position relative para controlar a los hijos absolutos */
+.tarjeta-producto {
+    position: relative;
+}
+
+/* 2. La etiqueta se posiciona en la esquina superior derecha de la tarjeta */
+.badge-esquina {
+    position: absolute;
+    top: -1px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    font-size: 0.65rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+    z-index: 10;
+}
